@@ -2,12 +2,34 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:weightSum="3">
 
     <android.support.v4.view.ViewPager
         xmlns="http://schemas.android.com/apk/res/android"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/pager" />
+        android:id="@+id/pager"
+        android:layout_weight="2"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:weightSum="1">
+            <Spinner
+                android:id="@+id/spinnerCol"
+                android:layout_width="193dp"
+                android:layout_height="wrap_content"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Operar"
+            android:id="@+id/button"
+            android:layout_weight="0.25" />
+
+
+    </LinearLayout>
 </LinearLayout>
