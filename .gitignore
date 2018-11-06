@@ -1,6 +1,29 @@
-.gradle
-/local.properties
-/.idea/workspace.xml
-/.idea/libraries
+#File extensions
 .DS_Store
-/build
+
+#Android files
+*.apk
+*.ap_
+*.dex
+
+#Java files
+*.class
+
+#Not required paths
+bin/
+gen/
+
+.gradle/
+build/
+/*/build/
+
+#Propertu files
+local.properties
+gradle.properties
+
+proguard/
+
+#IDE files
+*.log
+*.idea
+*.iml
