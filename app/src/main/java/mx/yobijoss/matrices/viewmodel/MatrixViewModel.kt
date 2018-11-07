@@ -1,10 +1,10 @@
-package mx.yobibytelabs.matrices.viewmodel
+package mx.yobijoss.matrices.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import mx.yobibytelabs.matrices.model.AddOperation
-import mx.yobibytelabs.matrices.model.MultiplyOperation
-import mx.yobibytelabs.matrices.model.Operation
+import mx.yobijoss.matrices.model.AddOperation
+import mx.yobijoss.matrices.model.MultiplyOperation
+import mx.yobijoss.matrices.model.Operation
 
 class MatrixViewModel : ViewModel() {
     val matrix1 : MutableLiveData<Array<DoubleArray>> = MutableLiveData()

@@ -1,4 +1,4 @@
-package mx.yobibytelabs.matrices.fragments
+package mx.yobijoss.matrices.fragments
 
 import android.os.Bundle
 import android.text.Editable
@@ -12,10 +12,10 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import kotlinx.android.synthetic.main.layout_matriz_4_4.*
-import mx.yobibytelabs.matrices.R
-import mx.yobibytelabs.matrices.model.MatrixType
-import mx.yobibytelabs.matrices.ui.double
-import mx.yobibytelabs.matrices.viewmodel.MatrixViewModel
+import mx.yobijoss.matrices.R
+import mx.yobijoss.matrices.model.MatrixType
+import mx.yobijoss.matrices.ui.double
+import mx.yobijoss.matrices.viewmodel.MatrixViewModel
 
 class MatrixFragment : Fragment(), TextWatcher {
 

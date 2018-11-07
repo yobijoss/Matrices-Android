@@ -1,4 +1,4 @@
-package mx.yobibytelabs.matrices.model
+package mx.yobijoss.matrices.model
 
 abstract class Operation {
 

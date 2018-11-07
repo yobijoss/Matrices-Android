@@ -1,6 +1,4 @@
-package mx.yobibytelabs.matrices.model
-
-import mx.yobibytelabs.matrices.model.Operation
+package mx.yobijoss.matrices.model
 
 class MultiplyOperation : Operation() {
     override fun getName() = "Multiplicación"

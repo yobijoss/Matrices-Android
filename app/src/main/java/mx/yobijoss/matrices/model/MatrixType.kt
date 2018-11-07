@@ -1,4 +1,4 @@
-package mx.yobibytelabs.matrices.model
+package mx.yobijoss.matrices.model
 
 enum class MatrixType {
     Operator_1,

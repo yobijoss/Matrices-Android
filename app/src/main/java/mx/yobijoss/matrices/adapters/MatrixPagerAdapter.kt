@@ -1,10 +1,10 @@
-package mx.yobibytelabs.matrices.adapters
+package mx.yobijoss.matrices.adapters
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
-import mx.yobibytelabs.matrices.fragments.MatrixFragment
-import mx.yobibytelabs.matrices.model.MatrixType
+import mx.yobijoss.matrices.fragments.MatrixFragment
+import mx.yobijoss.matrices.model.MatrixType
 
 class MatrixPagerAdapter(manager: FragmentManager) : FragmentPagerAdapter(manager) {
 

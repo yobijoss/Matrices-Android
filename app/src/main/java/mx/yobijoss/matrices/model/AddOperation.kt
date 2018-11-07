@@ -1,4 +1,4 @@
-package mx.yobibytelabs.matrices.model
+package mx.yobijoss.matrices.model
 
 class AddOperation : Operation() {
     override fun getName() = "Sumar"

@@ -1,4 +1,4 @@
-package mx.yobibytelabs.matrices.activity
+package mx.yobijoss.matrices.activity
 
 import android.os.Bundle
 import android.view.View
@@ -6,14 +6,11 @@ import android.widget.AdapterView
 import android.widget.AdapterView.OnItemSelectedListener
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import kotlinx.android.synthetic.main.activity_main.*
-import mx.yobibytelabs.matrices.R
-import mx.yobibytelabs.matrices.adapters.MatrixPagerAdapter
-import mx.yobibytelabs.matrices.model.AddOperation
-import mx.yobibytelabs.matrices.viewmodel.MatrixViewModel
+import mx.yobijoss.matrices.R
+import mx.yobijoss.matrices.adapters.MatrixPagerAdapter
+import mx.yobijoss.matrices.viewmodel.MatrixViewModel
 
 
 class OperationActivity : AppCompatActivity(), OnItemSelectedListener {

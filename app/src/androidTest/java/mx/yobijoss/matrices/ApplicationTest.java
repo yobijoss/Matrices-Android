@@ -1,4 +1,4 @@
-package mx.yobibytelabs.matrices;
+package mx.yobijoss.matrices;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

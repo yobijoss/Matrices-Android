@@ -1,4 +1,4 @@
-package mx.yobibytelabs.matrices.ui
+package mx.yobijoss.matrices.ui
 
 import android.widget.EditText
 import java.lang.NumberFormatException
