@@ -11,5 +11,8 @@ importa el proyecto solamente.
 ## Presentación
 https://docs.google.com/presentation/d/1FRo8VA-JSN2PMIFkCStvSAuW5sA1vmLLWGlOlD9UvKk/edit?usp=sharing
 
+## Play Store
+https://play.google.com/store/apps/details?id=mx.yobijoss.matrices
+
 
 
