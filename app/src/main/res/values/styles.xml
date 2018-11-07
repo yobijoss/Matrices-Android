@@ -1,10 +1,23 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light">
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="windowActionBar">false</item>
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="MatrixInput" parent="AppTheme">
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:enabled">false</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/matrixTextSize</item>
+        <item name="android:ems">10</item>
+        <item name="android:inputType">numberSigned|numberDecimal</item>
+        <item name="android:textColorHint">@color/grayDark</item>
+        <item name="android:hint">@string/default_value</item>
     </style>
 
 </resources>

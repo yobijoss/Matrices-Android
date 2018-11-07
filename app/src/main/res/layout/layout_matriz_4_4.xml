@@ -1,144 +1,145 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:weightSum="4">
+    android:layout_height="match_parent">
 
     <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:ems="10"
-        android:inputType="numberSigned|numberDecimal" />
+        android:id="@+id/editText00"
+        style="@style/MatrixInput"
+        app:layout_constraintBottom_toTopOf="@+id/editText10"
+        app:layout_constraintEnd_toStartOf="@+id/editText01"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:ems="10"
-        android:inputType="numberSigned|numberDecimal" />
+        android:id="@+id/editText01"
+        style="@style/MatrixInput"
+        app:layout_constraintBottom_toTopOf="@+id/editText11"
+        app:layout_constraintEnd_toStartOf="@+id/editText02"
+        app:layout_constraintStart_toEndOf="@+id/editText00"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <EditText
         android:id="@+id/editText02"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:ems="10"
-        android:inputType="numberSigned|numberDecimal" />
+        style="@style/MatrixInput"
+        app:layout_constraintBottom_toTopOf="@+id/editText12"
+        app:layout_constraintEnd_toStartOf="@+id/editText03"
+        app:layout_constraintStart_toEndOf="@+id/editText01"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <EditText
         android:id="@+id/editText03"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:ems="10"
-        android:inputType="numberSigned|numberDecimal" />
+        style="@style/MatrixInput"
+        app:layout_constraintBottom_toTopOf="@+id/editText13"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editText02"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editText10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:ems="10"
-        android:inputType="numberSigned|numberDecimal" />
+        style="@style/MatrixInput"
+        app:layout_constraintBottom_toTopOf="@+id/editText20"
+        app:layout_constraintEnd_toStartOf="@+id/editText11"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText00" />
 
     <EditText
         android:id="@+id/editText11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:ems="10"
-        android:inputType="numberSigned|numberDecimal" />
+        style="@style/MatrixInput"
+        app:layout_constraintBottom_toTopOf="@+id/editText21"
+        app:layout_constraintEnd_toStartOf="@+id/editText12"
+        app:layout_constraintStart_toEndOf="@+id/editText10"
+        app:layout_constraintTop_toBottomOf="@+id/editText01" />
 
 
     <EditText
         android:id="@+id/editText12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:ems="10"
-        android:inputType="numberSigned|numberDecimal" />
+        style="@style/MatrixInput"
+        app:layout_constraintBottom_toTopOf="@+id/editText22"
+        app:layout_constraintEnd_toStartOf="@+id/editText13"
+        app:layout_constraintStart_toEndOf="@+id/editText11"
+        app:layout_constraintTop_toBottomOf="@+id/editText02" />
 
 
     <EditText
         android:id="@+id/editText13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:ems="10"
-        android:inputType="numberSigned|numberDecimal" />
+        style="@style/MatrixInput"
+        app:layout_constraintBottom_toTopOf="@+id/editText23"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editText12"
+        app:layout_constraintTop_toBottomOf="@+id/editText03" />
 
 
     <EditText
         android:id="@+id/editText20"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:ems="10"
-        android:inputType="numberSigned|numberDecimal" />
+        style="@style/MatrixInput"
+        app:layout_constraintBottom_toTopOf="@+id/editText30"
+        app:layout_constraintEnd_toStartOf="@+id/editText21"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText10" />
 
     <EditText
         android:id="@+id/editText21"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:ems="10"
-        android:inputType="numberSigned|numberDecimal" />
+        style="@style/MatrixInput"
+        app:layout_constraintBottom_toTopOf="@+id/editText31"
+        app:layout_constraintEnd_toStartOf="@+id/editText22"
+        app:layout_constraintStart_toEndOf="@+id/editText20"
+        app:layout_constraintTop_toBottomOf="@+id/editText11" />
 
 
     <EditText
         android:id="@+id/editText22"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:ems="10"
-        android:inputType="numberSigned|numberDecimal" />
+        style="@style/MatrixInput"
+        app:layout_constraintBottom_toTopOf="@+id/editText32"
+        app:layout_constraintEnd_toStartOf="@+id/editText13"
+        app:layout_constraintStart_toEndOf="@+id/editText21"
+        app:layout_constraintTop_toBottomOf="@+id/editText12" />
 
 
     <EditText
         android:id="@+id/editText23"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:ems="10"
-        android:inputType="numberSigned|numberDecimal" />
+        style="@style/MatrixInput"
+        app:layout_constraintBottom_toTopOf="@+id/editText33"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editText22"
+        app:layout_constraintTop_toBottomOf="@+id/editText13" />
 
 
     <EditText
         android:id="@+id/editText30"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:ems="10"
-        android:inputType="numberSigned|numberDecimal" />
+        style="@style/MatrixInput"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/editText31"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText20" />
 
     <EditText
         android:id="@+id/editText31"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:ems="10"
-        android:inputType="numberSigned|numberDecimal" />
+        style="@style/MatrixInput"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/editText32"
+        app:layout_constraintStart_toEndOf="@+id/editText30"
+        app:layout_constraintTop_toBottomOf="@+id/editText21" />
 
 
     <EditText
         android:id="@+id/editText32"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:ems="10"
-        android:inputType="numberSigned|numberDecimal" />
+        style="@style/MatrixInput"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/editText33"
+        app:layout_constraintStart_toEndOf="@+id/editText31"
+        app:layout_constraintTop_toBottomOf="@+id/editText22" />
 
 
     <EditText
         android:id="@+id/editText33"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:ems="10"
-        android:inputType="numberSigned|numberDecimal" />
+        style="@style/MatrixInput"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editText32"
+        app:layout_constraintTop_toBottomOf="@+id/editText23" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

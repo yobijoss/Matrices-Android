@@ -1,0 +1,29 @@
+package mx.yobibytelabs.matrices.viewmodel
+
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import mx.yobibytelabs.matrices.model.AddOperation
+import mx.yobibytelabs.matrices.model.MultiplyOperation
+import mx.yobibytelabs.matrices.model.Operation
+
+class MatrixViewModel : ViewModel() {
+    val matrix1 : MutableLiveData<Array<DoubleArray>> = MutableLiveData()
+    val matrix2 : MutableLiveData<Array<DoubleArray>> = MutableLiveData()
+    val matrixResult : MutableLiveData<Array<DoubleArray>> = MutableLiveData()
+    val matrixOperationList = listOf(AddOperation(), MultiplyOperation())
+    var currentOperation = matrixOperationList[0];
+
+    init {
+        matrix1.value = Operation.EMPTY_MATRIX
+        matrix2.value = Operation.EMPTY_MATRIX
+    }
+
+    fun operate () {
+        matrixResult.value = currentOperation.operate(matrix1.value!!, matrix2.value!!)
+    }
+
+    fun changeOperation(selectedOperationIndex: Int) {
+        currentOperation = matrixOperationList[selectedOperationIndex]
+        operate()
+    }
+}
