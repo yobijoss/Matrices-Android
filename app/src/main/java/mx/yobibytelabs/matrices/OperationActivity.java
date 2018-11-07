@@ -9,16 +9,17 @@ import androidx.viewpager.widget.ViewPager;
 import mx.yobibytelabs.matrices.adapters.MyPagerAdapter;
 
 
-public class MainActivity extends AppCompatActivity {
+public class OperationActivity extends AppCompatActivity {
 
-     MyPagerAdapter adapter;
+    MyPagerAdapter adapter;
     ViewPager pager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        pager  = findViewById(R.id.pager);
+        pager = findViewById(R.id.pager);
         adapter = new MyPagerAdapter(getSupportFragmentManager());
         pager.setAdapter(adapter);
 
@@ -42,10 +43,10 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
-        actionBar.addTab(actionBar.newTab().setText("Matriz "+1).setTabListener(tabListener));
-        actionBar.addTab(actionBar.newTab().setText("Matriz "+2).setTabListener(tabListener));
+        actionBar.addTab(actionBar.newTab().setText("Matriz " + 1).setTabListener(tabListener));
+        actionBar.addTab(actionBar.newTab().setText("Matriz " + 2).setTabListener(tabListener));
 
-        pager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener(){
+        pager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
             @Override
             public void onPageSelected(int position) {
                 actionBar.setSelectedNavigationItem(position);
@@ -54,7 +55,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-
 
 
 }

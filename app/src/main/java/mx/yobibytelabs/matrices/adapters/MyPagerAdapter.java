@@ -5,7 +5,7 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
-import mx.yobibytelabs.matrices.fragments.FragmentMatriz;
+import mx.yobibytelabs.matrices.fragments.MatrixFragment;
 
 public class MyPagerAdapter extends FragmentPagerAdapter {
 
@@ -16,11 +16,11 @@ public class MyPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int i) {
-        FragmentMatriz fragmentMatriz = new FragmentMatriz();
+        MatrixFragment matrixFragment = new MatrixFragment();
         Bundle bundle = new Bundle();
         bundle.putInt("index", i + 1);
-        fragmentMatriz.setArguments(bundle);
-        return fragmentMatriz;
+        matrixFragment.setArguments(bundle);
+        return matrixFragment;
     }
 
     @Override
