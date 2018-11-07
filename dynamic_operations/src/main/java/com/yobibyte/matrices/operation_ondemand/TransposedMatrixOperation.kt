@@ -1,4 +1,4 @@
-package com.yobibyte.dynamic_operations
+package com.yobibyte.matrices.operation_ondemand
 
 import mx.yobijoss.matrices.model.Operation
 

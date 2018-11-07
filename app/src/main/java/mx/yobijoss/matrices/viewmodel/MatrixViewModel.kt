@@ -10,7 +10,7 @@ class MatrixViewModel : ViewModel() {
     val matrix1 : MutableLiveData<Array<DoubleArray>> = MutableLiveData()
     val matrix2 : MutableLiveData<Array<DoubleArray>> = MutableLiveData()
     val matrixResult : MutableLiveData<Array<DoubleArray>> = MutableLiveData()
-    val matrixOperationList = listOf(AddOperation(), MultiplyOperation())
+    val matrixOperationList = mutableListOf(AddOperation(), MultiplyOperation())
     var currentOperation = matrixOperationList[0];
 
     init {
