@@ -2,8 +2,8 @@ package mx.yobijoss.matrices.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import mx.yobijoss.matrices.model.AddOperation
-import mx.yobijoss.matrices.model.MultiplyOperation
+import mx.yobijoss.matrices.operations.AddOperation
+import mx.yobijoss.matrices.operations.MultiplyOperation
 import mx.yobijoss.matrices.model.Operation
 
 class MatrixViewModel : ViewModel() {

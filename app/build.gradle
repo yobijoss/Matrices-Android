@@ -37,6 +37,9 @@ android {
             enableSplit = true
         }
     }
+    dynamicFeatures = [":dynamic_operations"]
+
+
 }
 
 dependencies {
@@ -53,5 +56,7 @@ dependencies {
     annotationProcessor "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
 
     implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
-}
 
+    //Core module para dynamic features
+    implementation 'com.google.android.play:core:1.3.5'
+}
