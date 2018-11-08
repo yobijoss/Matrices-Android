@@ -90,6 +90,7 @@ class OperationActivity : AppCompatActivity(), OnItemSelectedListener, SplitInst
                 }
                 SplitInstallSessionStatus.INSTALLED -> {
                     onSuccessfulLoad(requestedIndex)
+                    Toast.makeText(this, "modulo $name Instalado correctamente", Toast.LENGTH_SHORT).show()
                 }
 
                 SplitInstallSessionStatus.INSTALLING -> {
