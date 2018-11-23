@@ -2,16 +2,18 @@ package mx.yobijoss.matrices.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import mx.yobijoss.matrices.model.Operation
 import mx.yobijoss.matrices.operations.AddOperation
 import mx.yobijoss.matrices.operations.MultiplyOperation
-import mx.yobijoss.matrices.model.Operation
 
 class MatrixViewModel : ViewModel() {
+
     val matrix1 : MutableLiveData<Array<DoubleArray>> = MutableLiveData()
     val matrix2 : MutableLiveData<Array<DoubleArray>> = MutableLiveData()
     val matrixResult : MutableLiveData<Array<DoubleArray>> = MutableLiveData()
-    val matrixOperationList = mutableListOf(AddOperation(), MultiplyOperation())
-    var currentOperation = matrixOperationList[0];
+
+    val operationList = mutableListOf(AddOperation(), MultiplyOperation())
+    var currentOperation = operationList[0];
 
     init {
         matrix1.value = Operation.EMPTY_MATRIX
@@ -23,7 +25,7 @@ class MatrixViewModel : ViewModel() {
     }
 
     fun changeOperation(selectedOperationIndex: Int) {
-        currentOperation = matrixOperationList[selectedOperationIndex]
+        currentOperation = operationList[selectedOperationIndex]
         operate()
     }
 }

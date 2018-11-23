@@ -5,6 +5,7 @@
     <dist:module
         dist:onDemand="true"
         dist:title="@string/title_dynamic_operations">
+        <!--fusing as true will let uset to install dynamic features at first time if user device does not support it -->
         <dist:fusing dist:include="true" />
     </dist:module>
 </manifest>

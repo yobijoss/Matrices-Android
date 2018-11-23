@@ -13,37 +13,34 @@ import com.google.android.play.core.splitinstall.model.SplitInstallSessionStatus
 import kotlinx.android.synthetic.main.activity_main.*
 import mx.yobijoss.matrices.R
 import mx.yobijoss.matrices.adapters.MatrixPagerAdapter
-import mx.yobijoss.matrices.model.Operation
+import mx.yobijoss.matrices.modules.DynamicModulesUtil
+import mx.yobijoss.matrices.viewmodel.DynamicModulesViewModel
 import mx.yobijoss.matrices.viewmodel.MatrixViewModel
 
 
 class OperationActivity : AppCompatActivity(), OnItemSelectedListener, SplitInstallStateUpdatedListener {
 
-    val onDemandPackageName = "com.yobibyte.matrices.operation_ondemand"
-    val onDemandPackageClass = "TransposedMatrixOperation"
+    private lateinit var matrixViewModel: MatrixViewModel
+    private lateinit var dynamicOperationViewModel: DynamicModulesViewModel
 
-    private lateinit var viewModel: MatrixViewModel
-
-    private lateinit var manager: SplitInstallManager
-    private val dynamicOperationModuleName = "dynamic_operations"
-    private var requestedIndex: Int = 0;
+    private lateinit var splitInstallManager: SplitInstallManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
-        manager = SplitInstallManagerFactory.create(this)
 
-        viewModel = ViewModelProviders.of(this).get(MatrixViewModel::class.java)
+        matrixViewModel = ViewModelProviders.of(this).get(MatrixViewModel::class.java)
+        dynamicOperationViewModel = ViewModelProviders.of(this).get(DynamicModulesViewModel::class.java)
+
+        splitInstallManager = SplitInstallManagerFactory.create(this)
+
 
         val matrixPagerAdapter = MatrixPagerAdapter(supportFragmentManager)
         viewPagerMatrix.adapter = matrixPagerAdapter
         tabLayoutMatrix.setupWithViewPager(viewPagerMatrix)
 
-        val list = viewModel.matrixOperationList.map { it.getName() }
-        val expandedList = mutableListOf<String>()
-        expandedList.addAll(list);
-        expandedList.add("Transpuesta Matriz 1")
+        val expandedList = matrixViewModel.operationList.map { it.getName() }
 
         spinnerOperations.adapter = ArrayAdapter(this, R.layout.item_spinner_operation, expandedList)
         spinnerOperations.onItemSelectedListener = this
@@ -54,19 +51,19 @@ class OperationActivity : AppCompatActivity(), OnItemSelectedListener, SplitInst
 
     override fun onItemSelected(parentView: AdapterView<*>?, selectedItem: View?, position: Int, id: Long) {
         if (position <2) {
-            viewModel.changeOperation(position)
+            matrixViewModel.changeOperation(position)
         } else {
             loadNewOperations(position)
         }
     }
 
     override fun onResume() {
-        manager.registerListener(this)
+        splitInstallManager.registerListener(this)
         super.onResume()
     }
 
     override fun onPause() {
-        manager.unregisterListener(this)
+        splitInstallManager.unregisterListener(this)
         super.onPause()
     }
 
@@ -76,7 +73,6 @@ class OperationActivity : AppCompatActivity(), OnItemSelectedListener, SplitInst
             when (state.status()) {
                 SplitInstallSessionStatus.DOWNLOADING -> {
                     //  In order to see this, the application has to be uploaded to the Play Store.
-
                     Toast.makeText(this, "Descargando modulo $name", Toast.LENGTH_SHORT).show()
                 }
                 SplitInstallSessionStatus.REQUIRES_USER_CONFIRMATION -> {
@@ -89,7 +85,7 @@ class OperationActivity : AppCompatActivity(), OnItemSelectedListener, SplitInst
                     startIntentSender(state.resolutionIntent()?.intentSender, null, 0, 0, 0)
                 }
                 SplitInstallSessionStatus.INSTALLED -> {
-                    onSuccessfulLoad(requestedIndex)
+                    onSuccessfulLoad(name)
                     Toast.makeText(this, "modulo $name Instalado correctamente", Toast.LENGTH_SHORT).show()
                 }
 
@@ -108,7 +104,7 @@ class OperationActivity : AppCompatActivity(), OnItemSelectedListener, SplitInst
     private fun loadNewOperations(position: Int) {
         Toast.makeText(this, "Cargando Operaciones nuevas", Toast.LENGTH_SHORT).show()
 
-        if (manager.installedModules.contains(dynamicOperationModuleName)) {
+        if (splitInstallManager.installedModules.contains(dynamicOperationModuleName)) {
             Toast.makeText(this, "Ya Instalada", Toast.LENGTH_SHORT).show()
             onSuccessfulLoad(position)
             return
@@ -119,17 +115,17 @@ class OperationActivity : AppCompatActivity(), OnItemSelectedListener, SplitInst
                 .addModule(dynamicOperationModuleName)
                 .build()
 
-        manager.startInstall(request)
+        splitInstallManager.startInstall(request)
 
         Toast.makeText(this, "Empezando instalación de operaciones nuevas", Toast.LENGTH_SHORT).show()
     }
 
-    private fun onSuccessfulLoad(operationIndex: Int) {
-        val operationClass = Class.forName("$onDemandPackageName.$onDemandPackageClass")
-        val constructor = operationClass.getConstructor()
-        val transposedOperation = constructor.newInstance() as Operation
+    private fun onSuccessfulLoad(operationIndex: String) {
+        val transposedOperation = DynamicModulesUtil.loadNewOperationInstance()
 
-        viewModel.matrixOperationList.add(transposedOperation);
-        viewModel.changeOperation(operationIndex)
+        matrixViewModel.operationList.add(transposedOperation);
+        matrixViewModel.changeOperation(operationIndex)
     }
+
+
 }
